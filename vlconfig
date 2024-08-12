@@ -1,0 +1,84 @@
+#%Module1.0
+# This config file is actually an Environment Modules modulefile, see
+# http://modules.sourceforge.net/man/modulefile.html for syntax help.
+# Its purpose is to control the environment seen by all tools and apps
+# that act within a project workspace.  It is operated on by the "vl"
+# wrapper script.
+
+module load tools/FOSS/git/2.30.2
+
+# Get 'x86_64' or 'aarch64' from the host machine.
+# This enables using arch-dependent paths and enablesrunning simulations
+# on ARM hosts
+setenv VL_HOST_ARCH [expr { [info exists ::env(HOST_ARCH_OVERRIDE)] ? $::env(HOST_ARCH_OVERRIDE) : [exec /bin/uname -m] } ]
+
+prepend-path PATH /tools/ampere/common/bin
+
+# Clear timezone setting if set -- the timezone throws off timestamps used for
+# logging data
+unsetenv TZ
+
+# Enable FlexLM diagnostics. This will instruct FlexLM to print a message
+# when a license is checked out. Looks like:
+#  Checkout succeeded: msimhdlsim/2E1E5E57C7E24E9742E6
+setenv FLEXLM_DIAGNOSTICS 3
+
+# Add project executable directory to bootstrap path.
+# Note: $VL_PROJECT_ROOT is set to workspace root by the vl wrapper itself.
+prepend-path PATH $env(VL_PROJECT_ROOT)/bin
+
+# This fix the issue when running vl mas <avp_test>.spy
+setenv ARM_TOOL_VARIANT aarch
+
+# The Ampere flow has a few perl scripts.  More importantly, Quicksilver is
+# heavily dependent on ARM IP which requires perl as part of the build flow.
+module load tools/FOSS/perl/5.26.2
+prepend-path PERL5LIB $env(VL_PROJECT_ROOT)/lib/perl
+prepend-path PERL5LIB /tools/ampere/common/lib/perl
+
+# Common sknobs module used for argument management.
+module load tools/FOSS/sknobs/1.0.1_ampere_6_py312
+setenv SKNOBS_DELIMITER_FLAVOR crnl
+setenv SKNOBS_LIB_DIR $env(SKNOBS_HOME)/lib
+
+# FIXME: smclough: Required for VCS? Questa and VCS appear to be tightly coupled dependencies.
+module load tools/siemens/qvip/2024.2
+
+module load tools/siemens/questasim/2023.4
+setenv MTI_VCO_MODE 64
+module load tools/mentor/vis/2022.3_1
+# Verdi version must closely track the VCS version to be compatible
+module load tools/synopsys/verdi3/V-2023.12-SP2
+setenv FSDB_NO_PARALLEL 1
+setenv NOVAS_AUTO_SOURCE $env(VL_PROJECT_ROOT)/dv/testplan/novas_auto_score.tcl
+
+
+# Denali VIP models
+# NOTE: This is required to set CDN_VIP_ROOT used elsewhere!
+module load tools/cadence/vipcat/11.30.098-28_Jul_2024_08_15_01
+append-path LD_LIBRARY_PATH $env(DENALI)/../lib/64bit
+#setenv CDN_AHB_USING_CCORE ""
+setenv UVC_MSI_MODE 1
+setenv DENALIRC $env(VL_PROJECT_ROOT)/dv/lib/Subsystems/mesh/denalirc
+#setenv DENALI_SOMA_DIR $env(VL_PROJECT_ROOT)/dv/lib/Subsystems/cpu/sv/units/ddr/denali_models
+
+# SVUnit
+module load tools/FOSS/svunit/v19.7
+
+# VCS setup
+module load tools/synopsys/vcs/V-2023.12-SP2
+setenv SNPS_SIM_BC_CONFIG_FILE $env(VL_PROJECT_ROOT)/etc/vcs/synopsys_bc.setup
+setenv CDN_VIP_LIB_PATH $env(CDN_VIP_ROOT)/tools.$env(CDS_ARCH)/psui/lib
+setenv SPECMAN_PATH $env(CDN_VIP_ROOT)/packages:$env(CDN_VIP_LIB_PATH)/64bit
+append-path PATH $env(CDN_VIP_ROOT)/tools.$env(CDS_ARCH)/bin
+setenv SPECMAN_PRE_COMMANDS "test"
+setenv SIMV_EXE_LOCATION $env(PWD)
+setenv QUESTA_MVC_VCS_LIB_PATH $env(QUESTA_MVC_HOME)/questa_mvc_core/linux_x86_64_gcc-9.2.0_vcs
+append-path LD_LIBRARY_PATH $env(QUESTA_MVC_VCS_LIB_PATH):$env(QUESTA_MVC_GCC_LIB):$env(DENALI)/verilog:$env(CDN_VIP_LIB_PATH)/64bit:$env(DENALI)/verilog:$env(CDN_VIP_ROOT)/tools.$env(CDS_ARCH)/lib/64bit:/tools/FOSS/gcc/6.4.0/x86_64/lib64
+
+# UVM_HOME is used by the Makefile
+# # fet passes '-sv_lib os.getenv(UVM_DPI)' to the questa vsim command.
+setenv UVM_VERSION uvm-1.2
+setenv UVM_HOME $env(MODEL_HOME)/verilog_src/$env(UVM_VERSION)
+setenv UVM_DPI $env(MODEL_HOME)/$env(UVM_VERSION)/linux_$env(VL_HOST_ARCH)/uvm_dpi
+

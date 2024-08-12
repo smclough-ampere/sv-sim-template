@@ -1,0 +1,76 @@
+#%Module1.0
+
+# == AVP ==
+# arm_avp project reference
+#setenv ARM_TOOL_VARIANT aarch
+module load release/arm_avp/5788
+#to use a "live" arm avp workspace:
+#module load /<your path>/projects/arm_avp/MAIN/dev/load.me
+
+# == CONFIG FILES ==
+# Global configuration files
+setenv AV_GLOBAL_FILES_PATH /release/misc/av_global_files/51
+
+# == ACK ==
+# load an appropriate release of the Connor ACK
+module load release/arm_acs_connor_v9/135
+#module load /work/linkm/cinema/arm_acs_connor_v9/MAIN_V9/dev/load.me
+
+# == AISLE ==
+# load an appropriate release of the Connor ISS (AISLE)
+module load /release/misc/iss/connor/28/share/swtools
+#module load /work/bbell/releases/aisle/candidate193_trinity/share/swtools
+#module load /work/bbell/aisle/_build/share/swtools
+
+## Fallback in case SWTOOLS_LIB is not defined by AISLE
+if {! [info exists ::env(SWTOOLS_LIB)] } {
+    setenv SWTOOLS_LIB $::env(SWTOOLS_ROOT)/lib
+}
+
+# == COSIM ==
+module load /release/misc/cosim/connor/38/share/swtools
+#module load /work/wng/cosim_domino/cosim/_build/share/swtools
+
+## Fallback in case COSIM_LIB is not defined by COSIM
+if {! [info exists ::env(COSIM_LIB)] } {
+    setenv COSIM_LIB $::env(COSIM_ROOT)/lib
+}
+
+# == CPUT ==
+# load an appropriate release of the Connor ISS (AISLE)
+module load /release/cput/22/share/swtools
+#module load /work/linkm/releases/cput/cput-candidate4/share/swtools
+#module load /work/linkm/cput/_build/share/swtool9
+append-path PATH ${::env(CPUT_ROOT)}/bin
+append-path PYTHONPATH ${::env(CPUT_ROOT)}/lib/python3
+
+# == RAVEN ==
+# Raven release number (found at /tools/arm/raven)
+# NOTE: THE RAVEN RELATED MODULES MUST BE LOADED AFTER swtools TO ENSURE OUR LATEST RELEASE OF AISLE IS USED.
+module load tools/arm/raven/12.7.0
+setenv RAVEN_PROJECT_CODE dab
+setenv RAVEN_TESTFILES /project/domino/fe/release/raven_testfiles_domino/24
+#setenv RAVEN_TESTFILES /release/rogue/fe/raven_testfiles_rogue/12
+setenv RAVEN_BOOST /release/misc/raven_boost/32/domino
+module load release/arm_raven/1768
+# Change this path to your local raven environment if you want to pull templates from there instead of the central repo
+#module load /work/<user>/arm_raven_1/projects/arm_raven/MAIN/dev/load.me
+
+# == ETRACK ==
+# ETrack - PV event streams & emulation debug tools - $ETRACK_HOME/README.md
+setenv ETRACK_HOME /release/misc/etrack/main.201
+setenv ETRACK_PROJECT domino_a0
+
+# == REGTOOLS ==
+setenv REGTOOLS_PATH /release/misc/regtools/main.23
+prepend-path PATH  $env(REGTOOLS_PATH)/bin
+prepend-path PYTHONPATH $env(REGTOOLS_PATH)/lib
+
+# == XLAT ==
+# Python packages from architecture to support xlat and fault logic generation
+#setenv FAULTLOGIC /release/misc/faultlogic/2023-07-12-py312
+setenv FAULTLOGIC /release/misc/faultlogic/dev-toml-py312
+append-path PYTHONPATH $env(FAULTLOGIC)/lib/python3.12/site-packages
+setenv XLAT_PATH /release/misc/xlat/main.13
+prepend-path PATH  $env(XLAT_PATH)/bin
+prepend-path PYTHONPATH $env(XLAT_PATH)/lib/python3/site-packages

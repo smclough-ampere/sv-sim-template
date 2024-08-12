@@ -1,0 +1,498 @@
+# Backward Compatibility Configuration, Q-2020.03-SP2
+# Copyright (c) 1991-2020 by Synopsys Inc.
+
+# Usage:
+#  Use version=<version> to make vcs behave like that release.
+#  Use enable=<id> or disable=<id> to set individual features.
+#  Use env SNPS_SIM_BC_CONFIG_FILE=<path> to override installation.
+
+#diag=true # uncomment to display final config, or use 'vcs -diag bc'.
+
+#version=VCS2013.06
+#version=VCS2014.03
+#version=VCS2014.12
+#version=VCS2015.09
+#version=VCS2016.06
+#version=VCS2017.03
+#version=VCS2017.12
+#version=VCS2018.09
+#version=VCS2019.06
+
+#enable=ADJUST_PASS
+# This option is also enabled by selecting version VCS2016.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=ALLOW_EXPR_GOTO
+# This option is also enabled by selecting version VCS2015.09.
+# This option retires after the VCS2020.03 release.
+
+#enable=ALLOW_FWD_DECL
+# This option is also enabled by selecting version VCS2015.09.
+# This option retires after the VCS2020.03 release.
+
+#enable=ALLOW_NULL_MACRO_ARGS
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=ASSIGN_IN_WAIT_EVENT_EXPRESSION
+# This option is also enabled by selecting version VCS2018.09.
+# This option retires after the VCS2020.03 release.
+
+#enable=ASSOC_ARRAY_DELETE_METHOD
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=ASSOC_ARRAY_EXISTS_METHOD
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=AUTOMATIC_STRUCT_ASSIGNMENT
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=BIND_MODULE_INSTNAME
+# This option is also enabled by selecting version VCS2014.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=BITS_CLASS_TYPE
+# This option is also enabled by selecting version VCS2019.06.
+# This option retires after the VCS2021.09 release.
+
+#enable=BITS_DYNAMIC_EXPR_NYI
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=BITS_STRING_TYPE_STRUCT
+# This option is also enabled by selecting version VCS2019.06.
+# This option retires after the VCS2021.09 release.
+
+#enable=BITWISE_ASSIGNMENT_INTEGRAL_OP
+# This option is also enabled by selecting version VCS2016.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=BIT_STREAM_CASTING
+# This option is also enabled by selecting version VCS2019.06.
+# This option retires after the VCS2021.09 release.
+
+#enable=BLOCK_ILLEGAL_DELAY_USAGE
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=CASE_ITEM_TYPE_COMPAT
+# This option is also enabled by selecting version VCS2016.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=CB_EXTENDED_BEHAVIOR
+# This option is also enabled by selecting version VCS2013.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=CHAR_AS_SV_KEYWORD
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=CLASSREF_MEM_IN_EVENT_CTRL
+# This option is also enabled by selecting version VCS2019.06.
+# This option retires after the VCS2021.09 release.
+
+#enable=CM_FSM_1906_ENGINE
+# This option is also enabled by selecting version VCS2019.06.
+# This option retires after the VCS2021.09 release.
+
+#enable=CONST_FUNC_CALL_IN_CONST_FUNC
+# This option is also enabled by selecting version VCS2016.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=CREATE_XVIR_FOR_GEN
+# This option is also enabled by selecting version VCS2019.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=CSTR_REDUCTION_METHOD_SLICES
+# This option is also enabled by selecting version VCS2018.09.
+# This option retires after the VCS2021.09 release.
+
+#enable=DA_INIT_TYPE_CHECK
+# This option is also enabled by selecting version VCS2019.06.
+# This option retires after the VCS2021.09 release.
+
+#enable=DA_SIZE_CHECK
+# This option is also enabled by selecting version VCS2018.09.
+# This option retires after the VCS2021.09 release.
+
+#enable=DISABLE_HDLXMR_DEST_AV_ERR
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=DISABLE_INITREG_DEFAULT
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=DISABLE_INITREG_NEW_MODEL
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=DISABLE_INTEGRAL_IGIU
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=DISABLE_PERCENTM
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=DISABLE_SEMATIC_CHECK_FOR_DISABLE_SOFT
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=DISABLE_VERILOG_INSTR_OPT
+# This option is also enabled by selecting version VCS2018.09.
+# This option retires after the VCS2021.09 release.
+
+#enable=DOLLAR_INCREMENT
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=DO_CHECK_ON_GENERATE_COND_EXPR
+# This option is also enabled by selecting version VCS2016.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=DPI_DISABLE_CONST_INPUT_ARGUMENT
+# This option is also enabled by selecting version VCS2018.09.
+# This option retires after the VCS2020.03 release.
+
+#enable=DPI_IMP_FUNC_IMPLICIT_CONTEXT
+# This option is also enabled by selecting version VCS2016.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=DPI_STRING_BUFFER_NO_FREE
+# This option is also enabled by selecting version VCS2014.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=DPI_STRING_EXPORT_OUTPUT_BUFFER_NO_FREE
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=DPI_ZERO_FILL_LOGIC_VECTOR
+# This option is also enabled by selecting version VCS2014.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=EMPTY_CONCAT_IAP
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=ENABLE_THREAD_DEBUG
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=ENCRYPT_PROPERTY_SIGNAL
+# This option is also enabled by selecting version VCS2019.06.
+# This option retires after the VCS2021.09 release.
+
+#enable=ENUMERATOR_RANGE
+# This option is also enabled by selecting version VCS2015.09.
+# This option retires after the VCS2020.03 release.
+
+#enable=ENUM_ASSIGN
+# This option is also enabled by selecting version VCS2014.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=ENUM_ASSIGN_APM_UAC
+# This option is also enabled by selecting version VCS2014.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=ENUM_NAME
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=ENUM_VALUES
+# This option is also enabled by selecting version VCS2014.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=EXCLUDE_SVA_PROP
+# This option is also enabled by selecting version VCS2015.09.
+# This option retires after the VCS2020.03 release.
+
+#enable=FILE_ENCODING_TYPE_CHECK
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=FORMAT_SPECIFIER
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=GENERATE_CONDITION_WITH_MSB
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=HVP_CG_VAR_NO_ESCAPE_NAME
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=HVP_NO_AVG_DNMTR_FOR_RATIO_MISSING_SCORE
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=HVP_NO_SCORE_FOR_EMPTY_FEAT
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=ILLEGAL_CONN_IN_MX_BOUNDARY_PORT
+# This option is also enabled by selecting version VCS2019.06.
+# This option retires after the VCS2021.09 release.
+
+#enable=IMPLICATION_ABORT
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=INSTANCE_ARRAY_REAL_ARGUMENT
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=INTEGRAL_DIMENSION_BOUNDS
+# This option is also enabled by selecting version VCS2016.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=INTEGRAL_DIMENSION_TYPE
+# This option is also enabled by selecting version VCS2016.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=LOCAL_STATIC
+# This option is also enabled by selecting version VCS2015.09.
+# This option retires after the VCS2020.03 release.
+
+#enable=LOCAL_TF_MULTI_DRIVER_CHECK
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=LRM_COMPLIANT_MDA_REDUCTION_METHOD
+# This option is also enabled by selecting version VCS2018.09.
+# This option retires after the VCS2020.03 release.
+
+#enable=MIXED_PORT_DIRECTION
+# This option is also enabled by selecting version VCS2016.06.
+# This option retires after the VCS2020.03 release.
+
+#disable=MODPORT_ON_HIGHCONN
+# This option is enabled by default.
+# This option is also enabled by selecting version VCS2015.09.
+# This option retires after the VCS2020.03 release.
+
+#enable=MULTICONCAT_MULTIPLIER
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=NAMED_ARG_IN_SYSFUNC_CALL
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=NET_INOUT_PORT
+# This option is also enabled by selecting version VCS2016.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=NEW_DYN_CAST_FOR_NULL_HANDLES
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=NEW_READMEM_FOR_DYNAMIC_TYPES
+# This option is also enabled by selecting version VCS2016.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=NLP_INIT_GLITCH_BC
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=NO_CSTR_IAMC_ERR_CHECK
+# This option is also enabled by selecting version VCS2018.09.
+# This option retires after the VCS2021.09 release.
+
+#enable=NO_STRUCT_CONT_ASSGN_INSTR
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=OLD_DEF_ASRT_UNIQ_PRIOR
+# This option is also enabled by selecting version VCS2014.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=OLD_DISIFF
+# This option is also enabled by selecting version VCS2015.09.
+# This option retires after the VCS2020.03 release.
+
+#enable=PACKED_VECTOR_REVERSE_METHOD
+# This option is also enabled by selecting version VCS2016.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=PARAM_CLASS_NEW_CHECK_SHARED
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=PARAM_CLOCKING_BLOCK
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=PE_PC_REFPORT_XMR
+# This option is also enabled by selecting version VCS2019.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=PULLUP_ON_REG
+# This option is also enabled by selecting version VCS2016.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=QUEUE_IN_DEPOSIT_TASK
+# This option is also enabled by selecting version VCS2019.06.
+# This option retires after the VCS2021.09 release.
+
+#enable=QUEUE_IN_QUEUE_BLOCK
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=RANGE_QUERY_ON_ENUM
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=REAL_IN_DIMENSIONS
+# This option is also enabled by selecting version VCS2015.09.
+# This option retires after the VCS2020.03 release.
+
+#enable=SELF_NORMALIZE
+# This option is also enabled by selecting version VCS2018.09.
+# This option retires after the VCS2020.03 release.
+
+#enable=SIGNED_ARRAY_PARAMETER
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=SIGNED_DIV_EVAL
+# This option is also enabled by selecting version VCS2018.09.
+# This option retires after the VCS2020.03 release.
+
+#enable=SIMPLE_DIST_TO_INSIDE
+# This option is also enabled by selecting version VCS2018.09.
+# This option retires after the VCS2021.09 release.
+
+#enable=SINGLE_VALUE_DIMENSION
+# This option is also enabled by selecting version VCS2019.06.
+# This option retires after the VCS2021.09 release.
+
+#enable=SIOB_IN_GENERATE
+# This option is also enabled by selecting version VCS2014.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=SPMEM_FORCE_ABOVE_2GB
+# This option is also enabled by selecting version VCS2019.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=STREAM_OP_IN_TERNARY
+# This option is also enabled by selecting version VCS2016.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=STREAM_OP_SLICE_SIZE
+# This option is also enabled by selecting version VCS2019.06.
+# This option retires after the VCS2021.09 release.
+
+#enable=SVA_ALLOW_DEGENERATE
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=SV_DA_PORT_FORMAL_IN_ASSIGN
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=SV_PREDEFINED_METHOD
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=SYSC_NO_SHOW_SC_MAIN
+# This option is also enabled by selecting version VCS2019.06.
+# This option retires after the VCS2021.09 release.
+
+#enable=TEMP_FOR_WIRE_PORT
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=TYPECAST_ERROR_STREAM_OP
+# This option is also enabled by selecting version VCS2014.12.
+# This option retires after the VCS2020.03 release.
+
+enable=UNNAMED_BLOCK
+# This option is also enabled by selecting version VCS2016.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=UNSIGNED_CLOG2
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=UNSTREAM_OLD_BEHAV
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=UPF_ALLOW_ROOTED_PATH
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=UPF_NET_ADD_PORT_STATE
+# This option is also enabled by selecting version VCS2015.09.
+# This option retires after the VCS2020.03 release.
+
+#enable=UPF_NO_REAL_SRSN
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=UPF_PD_ROOT_INSTANCE_AS_BOUNDARY
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=UPF_WARN_AT_BBOX_BOUNDARY
+# This option is also enabled by selecting version VCS2018.09.
+# This option retires after the VCS2020.03 release.
+
+#enable=VARIABLE_PART_SELECT_IN_ALIAS
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=VAR_NETTYPE_CONTASSIGN_DELAY
+# This option is also enabled by selecting version VCS2016.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=VCS_INIT_LRM_CALL_ORDER
+# This option is also enabled by selecting version VCS2015.09.
+# This option retires after the VCS2020.03 release.
+
+#enable=VCS_LP_CELLS_IN_USER_LIBS
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=VHDL_FALSE_IF_GEN_IGNORE
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=VHDL_WHEN_ELSE_COMPLETE_COND_COV
+# This option is also enabled by selecting version VCS2019.06.
+# This option retires after the VCS2021.09 release.
+
+#disable=VIRTUAL_INTERFACE_COMPAT
+# This option is enabled by default.
+# This option is also enabled by selecting version VCS2015.09.
+# This option retires after the VCS2020.03 release.
+
+#disable=VIRTUAL_INTERFACE_PORT
+# This option is enabled by default.
+# This option is also enabled by selecting version VCS2015.09.
+# This option retires after the VCS2020.03 release.
+
+#enable=VI_TO_MODPORT_ASSIGNMENT
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+#enable=VOID_CAST
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
+
+#enable=VPI_INDEXED_PARTSEL
+# This option is also enabled by selecting version VCS2016.06.
+# This option retires after the VCS2020.03 release.
+
+#enable=VPI_LRM_VPI_GET_DELAY
+# This option is also enabled by selecting version VCS2017.12.
+# This option retires after the VCS2020.03 release.
+
+enable=XMR_TO_UNNAMED_BLOCK
+# This option is also enabled by selecting version VCS2017.03.
+# This option retires after the VCS2020.03 release.
